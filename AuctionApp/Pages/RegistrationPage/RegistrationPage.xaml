@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:AuctionApp.Pages.RegistrationPage"
+             xmlns:views="clr-namespace:AuctionApp.Views"
+             xmlns:local="clr-namespace:AuctionApp.Converters"
+             x:DataType="viewmodels:RegistrationViewModel"
+             x:Class="AuctionApp.Pages.RegistrationPage.RegistrationPage"
+             Title="RegistrationPage">
+    <ContentPage.Resources>
+        <local:AllNotNullOrEmptyConverter x:Key="AllTrueConverter"/> 
+    </ContentPage.Resources>
+    <VerticalStackLayout>
+        <Label Text="E-mail" />
+        <Entry x:Name="Email" Placeholder="E-mail" Keyboard="Email" Text="{Binding Email}"/>
+        <Label Text="Пароль. Должен быть не менее 6 символов, включая знаки, цифры, заглавне и строчные буквы" />
+        <Entry x:Name="Password" Placeholder="E-mail" Keyboard="Default" IsPassword="True" Text="{Binding Password}"/>
+        <Label Text="Username. Только буквы и цифры, без пробелов" />
+        <Entry x:Name="Username" Placeholder="Username" Keyboard="Default" Text="{Binding UserName}"/>
+        <views:ServiceMessagesView x:Name="messagesView" IsVisible="false"/>
+        <Button Text="Зарегистрироваться" HorizontalOptions="CenterAndExpand" Command="{Binding RegistrateCommand}">
+            <Button.IsEnabled>
+                <MultiBinding Converter="{StaticResource AllTrueConverter}" Mode="TwoWay">
+                    <Binding Source="{x:Reference Email}" Path="Text"/>
+                    <Binding Source="{x:Reference Password}" Path="Text"/>
+                    <Binding Source="{x:Reference Username}" Path="Text"/>
+                </MultiBinding>
+            </Button.IsEnabled>
+        </Button>
+    </VerticalStackLayout>
+</ContentPage>

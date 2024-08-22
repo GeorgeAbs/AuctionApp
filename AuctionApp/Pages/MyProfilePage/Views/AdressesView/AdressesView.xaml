@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AuctionApp.Pages.MyProfilePage.Views.AdressesView"
+             xmlns:model="clr-namespace:AuctionApp.Services.MyProfileServices.AdressesService.Models"
+             xmlns:controls="clr-namespace:AuctionApp.Controls"
+             x:Class="AuctionApp.Pages.MyProfilePage.Views.AdressesView.AdressesView"
+             x:DataType="vm:AdressesVM">
+
+
+    <ScrollView>
+        <Grid RowDefinitions="*,*">
+            <CollectionView Grid.Row="0" ItemsSource="{Binding Adresses}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Adress">
+                        <Grid Margin="10"  RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*" ColumnDefinitions="3,*">
+                            <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="0" Grid.ColumnSpan="2">
+                                <Label Text="Title"/>
+                                <Entry Text="{Binding AdressTitle}"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="1" Grid.ColumnSpan="2">
+                                <Label Text="Country"/>
+                                <Entry Text="{Binding Country}"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="2" Grid.ColumnSpan="2">
+                                <Label Text="City"/>
+                                <Entry Text="{Binding City}"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="3" Grid.ColumnSpan="2">
+                                <Label Text="Region"/>
+                                <Entry Text="{Binding Region}"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="4" Grid.ColumnSpan="2">
+                                <Label Text="District"/>
+                                <Entry Text="{Binding District}"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="5" Grid.ColumnSpan="2">
+                                <Label Text="Street"/>
+                                <Entry Text="{Binding Street}"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="6" Grid.ColumnSpan="2">
+                                <Label Text="Building"/>
+                                <Entry Text="{Binding Building}"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="7" Grid.ColumnSpan="2">
+                                <Label Text="Floor"/>
+                                <Entry Text="{Binding Floor}"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="8" Grid.ColumnSpan="2">
+                                <Label Text="Flat"/>
+                                <Entry Text="{Binding Flat}"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="9" Grid.ColumnSpan="2">
+                                <Label Text="PostIndex"/>
+                                <Entry Text="{Binding PostIndex}"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="10" Grid.ColumnSpan="2">
+                                <Label Text="IsForShipment"/>
+                                <Switch IsToggled="{Binding IsForShipment}"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="11" Grid.ColumnSpan="2">
+                                <Label Text="IsDefaultForShipment"/>
+                                <Switch IsToggled="{Binding IsDefaultForShipment}"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="12" Grid.ColumnSpan="2">
+                                <Label Text="IsForReceiving"/>
+                                <Switch IsToggled="{Binding IsForReceiving}" />
+                            </VerticalStackLayout>
+                            <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="13" Grid.ColumnSpan="2">
+                                <Label Text="IsDefaultForReceiving"/>
+                                <Switch IsToggled="{Binding IsDefaultForReceiving}"/>
+                            </VerticalStackLayout>
+                            <controls:CustomButton Text="Save adress"   Grid.Row="14" Grid.ColumnSpan="2"/>
+                            <controls:CustomButton Text="Delete adress"  Grid.Row="15" Grid.ColumnSpan="2"/>
+                            
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Grid Grid.Row="1" Margin="10" RowSpacing="10"  RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*" ColumnDefinitions="Auto,*">
+                <Label Text="Create new adress" Grid.Row="0" Grid.ColumnSpan="2"/>
+                <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="1" Grid.ColumnSpan="2">
+                    <Label Text="Title"/>
+                    <Entry Text="{Binding AdressTitle}"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="2" Grid.ColumnSpan="2">
+                    <Label Text="Country"/>
+                    <Entry Text="{Binding Country}"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="3" Grid.ColumnSpan="2">
+                    <Label Text="City"/>
+                    <Entry Text="{Binding City}"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="4" Grid.ColumnSpan="2">
+                    <Label Text="Region"/>
+                    <Entry Text="{Binding Region}"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="5" Grid.ColumnSpan="2">
+                    <Label Text="District"/>
+                    <Entry Text="{Binding District}"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="6" Grid.ColumnSpan="2">
+                    <Label Text="Street"/>
+                    <Entry Text="{Binding Street}"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="7" Grid.ColumnSpan="2">
+                    <Label Text="Building"/>
+                    <Entry Text="{Binding Building}"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="8" Grid.ColumnSpan="2">
+                    <Label Text="Floor"/>
+                    <Entry Text="{Binding Floor}"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="9" Grid.ColumnSpan="2">
+                    <Label Text="Flat"/>
+                    <Entry Text="{Binding Flat}"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="10" Grid.ColumnSpan="2">
+                    <Label Text="PostIndex"/>
+                    <Entry Text="{Binding PostIndex}"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="11" Grid.ColumnSpan="2">
+                    <Label Text="IsForShipment"/>
+                    <Switch IsToggled="{Binding IsForShipment}"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="12" Grid.ColumnSpan="2">
+                    <Label Text="IsDefaultForShipment"/>
+                    <Switch IsToggled="{Binding IsDefaultForShipment}" />
+                </VerticalStackLayout>
+                <VerticalStackLayout BackgroundColor="DarkGray"  Grid.Row="13" Grid.ColumnSpan="2">
+                    <Label Text="IsForReceiving"/>
+                    <Switch IsToggled="{Binding IsForReceiving}"/>
+                </VerticalStackLayout>
+                <HorizontalStackLayout BackgroundColor="DarkGray" Grid.Row="14" Grid.ColumnSpan="2">
+                    <Label Text="IsDefaultForReceiving"/>
+                    <Switch IsToggled="{Binding IsDefaultForReceiving}"/>
+                </HorizontalStackLayout>
+                <Button Text="Create adress" Grid.Row="15" Grid.ColumnSpan="2" Command="{Binding CreateAdressCommand}"/>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentView>

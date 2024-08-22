@@ -1,0 +1,12 @@
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter height="200%" width="200%" y="-50%" x="-50%" id="svg_4_blur">
+      <feGaussianBlur stdDeviation="10" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g>
+    <title>Layer 1</title>
+    <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="40" id="svg_1" y="61.5" x="21" stroke-width="2" stroke="#000" fill="#000000">GY</text>
+    <rect opacity="0.4" filter="url(#svg_4_blur)" id="svg_4" height="135" width="157" y="-12.5" x="-23" stroke-width="0" stroke="#000" fill="#529D94"/>
+  </g>
+</svg>

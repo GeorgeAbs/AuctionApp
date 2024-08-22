@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AuctionApp.Pages.MyProfilePage.Views.ProfileViews"
+             x:Class="AuctionApp.Pages.MyProfilePage.Views.ProfileViews.ProfileView"
+             x:DataType="vm:ProfileVM">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Border>
+                <VerticalStackLayout>
+                    <Label Text="User name" />
+                    <Entry Placeholder="User name" Text="{Binding UserName}"/>
+                    <Button Text="Изменить User name" HorizontalOptions="Start" Command="{Binding ChangeUserNameCommand}"/>
+                </VerticalStackLayout>
+            </Border>
+            <Border >
+                <VerticalStackLayout>
+                    <Label Text="Email" />
+                    <Entry Placeholder="Email" Text="{Binding Email}" />
+                    <Button Text="Изменить email" HorizontalOptions="Start"/>
+                    <VerticalStackLayout IsVisible="False" >
+                        <Label Text="Введите код подтверждения"/>
+                        <Entry Placeholder="Code"/>
+                        <Button Text="Подтвердить изменение email" HorizontalOptions="Start"/>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+            <VerticalStackLayout>
+                <Label Text="Change user logo"/>
+                <Button Text="Выберите новое изображение" Command="{Binding SelectUserLogoCommand}"/>
+                <Image x:Name="userLogo" Scale="0.3" Aspect="AspectFit"/>
+                <Button Text="Изменить user logo" Command="{Binding ChangeUserLogoCommand}"/>
+            </VerticalStackLayout>
+            <Label Text="User info"/>
+            <VerticalStackLayout>
+                <Label Text="First name"/>
+                <Entry Placeholder="First name" Text="{Binding FirstName}"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <Label Text="Last name"/>
+                <Entry Placeholder="Last name" Text="{Binding LastName}"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout >
+                <Label Text="Birth date"/>
+                <DatePicker Date="{Binding BirthDate}"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <Label Text="VK link"/>
+                <Entry Text="{Binding VkLink}"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout >
+                <Label Text="Facebook link"/>
+                <Entry Text="{Binding FacebookLink}"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <Label Text="Telegram link"/>
+                <Entry Text="{Binding TelegramLink}"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout >
+                <Label Text="Whatsapp link"/>
+                <Entry Text="{Binding WhatsappLink}"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout >
+                <Label Text="Отображение аккаунта как User / как Shop"/>
+                <Switch IsToggled="{Binding IsUserAsShopOption}"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <Label Text="Change shop logo"/>
+                <Button Text="Выберите новое изображение" Command="{Binding SelectShopLogoCommand}"/>
+                <Image x:Name="shopLogo" Scale="0.3" Aspect="AspectFit"/>
+                <Button Text="Изменить shop logo" Command="{Binding ChangeShopLogoCommand}"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout >
+                <Label Text="Информация о магазине"/>
+                <Border>
+                    <VerticalStackLayout>
+                        <Label Text="Название"/>
+                        <Entry Placeholder="Shop title" Text="{Binding ShopTitle}"/>
+                    </VerticalStackLayout>
+                </Border>
+                <Border>
+                    <VerticalStackLayout>
+                        <Label Text="Описание"/>
+                        <Entry Placeholder="Description" Text="{Binding ShopDescription}"/>
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+            <Button Text="Изменить данные" Command="{Binding ChangeUserInfoCommand}"/>
+            <CollectionView>
+                
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+
+</ContentView>

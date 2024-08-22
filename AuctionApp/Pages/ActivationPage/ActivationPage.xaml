@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:AuctionApp.Views"
+             xmlns:viewmodel="clr-namespace:AuctionApp.Pages.ActivationPage"
+             x:Class="AuctionApp.Pages.ActivationPage.ActivationPage"
+             x:DataType="viewmodel:ActivationPageViewModel"
+             Title="ActivationPage">
+    <VerticalStackLayout>
+        <Label Text="Email" />
+        <Entry Placeholder="Email" Keyboard="Email" Text="{Binding Email}"/>
+        <Label Text="Код активации" />
+        <Entry Placeholder="Код активации" Keyboard="Default" Text="{Binding Code}"/>
+        <Button Text="Активировать почту" Command="{Binding ActivateCommand}"/>
+        <Label Text="Отправить новый код активации" />
+        <Entry Placeholder="Email" Keyboard="Default" Text="{Binding Email}"/>
+        <Button Text="Отправить новый код активации" Command="{Binding RequestNewCodeCommand}"/>
+        <views:ServiceMessagesView x:Name="messagesView" IsVisible="false"/>
+    </VerticalStackLayout>
+</ContentPage>

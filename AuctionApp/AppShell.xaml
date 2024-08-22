@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AuctionApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:mainPage="clr-namespace:AuctionApp.Pages.MainPage"
+    xmlns:loginPage="clr-namespace:AuctionApp.Pages.LoginPage"
+    xmlns:myProfilePage="clr-namespace:AuctionApp.Pages.MyProfilePage"
+    xmlns:pages="clr-namespace:AuctionApp.Pages"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:AuctionApp.Models"
+    xmlns:local="clr-namespace:AuctionApp"
+    x:DataType="local:AppShellViewModel"
+    Shell.FlyoutBehavior="Disabled"
+    Title="AuctionApp">
+
+    <TabBar>
+        <Tab Icon="main_page.png">
+            <ShellContent ContentTemplate="{DataTemplate mainPage:MainPage}"/>
+        </Tab>
+        <Tab Icon="my_profile.png">
+            <ShellContent ContentTemplate="{DataTemplate myProfilePage:MyProfilePage}"/>
+        </Tab>
+    </TabBar>
+
+</Shell>

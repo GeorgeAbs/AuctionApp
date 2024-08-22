@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:AuctionApp.Pages.MyProfilePage.Views"
+             xmlns:vm="clr-namespace:AuctionApp.Pages.MyProfilePage"
+             x:Class="AuctionApp.Pages.MyProfilePage.MyProfilePage"
+             x:DataType="vm:MyProfileViewModel" >
+    
+    <Grid RowDefinitions="*,9*" ColumnDefinitions="*,6*" RowSpacing="10">
+        <Button  Grid.Column="0" Grid.Row="0" ImageSource="my_profile.png" Clicked="MenuButton_Clicked"/>
+        <HorizontalStackLayout HorizontalOptions="End" Grid.Column="1" Grid.Row="0">
+            <Label Text="User name bla bla"/>
+            <Image Grid.Column="0" Source="dotnet_bot.png" HorizontalOptions="End"/>
+        </HorizontalStackLayout>
+        <views:MainView Grid.Row="1" Grid.ColumnSpan="2" x:Name="myProfileMainView"/>
+        <Border Grid.Row="1" Grid.ColumnSpan="2" x:Name="borderForMenu"/>
+    </Grid>
+</ContentPage>
